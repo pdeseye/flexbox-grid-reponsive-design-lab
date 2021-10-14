@@ -1,0 +1,175 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+
+
+/* resets font size to be 62.5% of the user preference - 
+   in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%
+}
+
+
+
+
+body {
+  background-color: gray;
+/* Use a system font, if none are available use an available sans-sarif   font */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: teal;
+  min-height: 100vh;
+}
+
+main{
+  background-color: white;
+  text-align: center;
+}
+
+#name {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 0 15px
+}
+
+img {
+  border-radius: 50px;
+  border: 4px solid lightskyblue;
+
+}
+
+#brand {
+  display: none;
+}
+
+#status {
+  color: grey;
+  text-align: right;
+}
+
+#occupation {
+  background-color: rgb(243, 237, 237);
+  padding: 5px 0;
+}
+
+#offer {
+  flex-wrap:nowrap;
+}
+
+#offer > p:first-child {
+  padding-top: 8px;
+}
+
+#offer > p:last-child {
+  padding-bottom: 8px;
+  padding-top: 3px;
+}
+
+#contact  {
+  display: flex;
+}
+#contact > p {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+  width: 50%;
+}
+
+#contact > p:first-child{
+  background-color:rgb(0, 195, 255);
+
+
+}
+#contact > p:last-child {
+  background-color: blue;
+
+}
+
+p {
+  margin: auto;
+}
+
+@media only screen and (min-width: 600px){
+  main{
+      width: 500px;
+      display: grid;
+      grid-template-columns: 40% 60%;
+      grid-template-rows: auto auto auto auto;
+      grid-template-areas:
+      "status name"
+      "img occupation"
+      "img brand"
+      "contact offer";
+  }
+
+
+
+  #status {
+    grid-area: status;
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  #occupation {
+    grid-area: occupation;
+    font-size: 1.2rem;
+    text-align: left;
+    padding-left: 15px;
+  }
+  img {
+    grid-area: img;
+    margin: auto;
+    display: flex;
+    width: 100px;
+    height: 100px
+  }
+  #brand {
+    grid-area: brand;
+    background-color: rgb(243, 237, 237);
+    display: unset;
+    text-align: left;
+    padding-left: 10px;
+  }
+  #brand > p {
+    border-left: 3px solid blue;
+    padding: 0 10px 0 10px;
+    line-height: 15px;
+  }
+  #contact {
+    grid-area: contact;
+    margin-top: 10px;
+  }
+  #offer {
+    grid-area: offer;
+    text-align: left;
+    padding-left:15px;
+    background-color: rgb(243, 237, 237);
+    line-height: 20px;
+  }
+  #name {
+    text-align: left;
+    display: unset;
+    padding-left: 15px;
+    background-color: rgb(243, 237, 237);
+    height: 100%;
+    margin: auto;
+    width: 100%;
+  }
+
+}
